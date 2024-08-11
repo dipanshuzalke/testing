@@ -26,8 +26,6 @@ async function main(){
     await mongoose.connect(MONGO_URL);
 }
 
-console.log(Options);
-
 
 function RandomQuestion() {
     const randomIndex = Math.floor(Math.random() * 123);
@@ -106,8 +104,8 @@ RandomQuestion();
 //index route
 app.get("/questions", async (req,res)=>{
     let AllQuestions = await Questions.find({});
-    let Options = AllQuestions.options;
-    res.render("allques.ejs",{ AllQuestions, RandomQuestion, startQuiz });
+    console.log(AllQuestions);
+    res.render("allques.ejs",{ AllQuestions, RandomQuestion});
 });
 
 app.get("/home", (req, res) => {
