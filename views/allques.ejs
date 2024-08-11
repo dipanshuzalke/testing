@@ -12,6 +12,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <style>
+
+      .options{
+        height: 4rem;
+        width: 10rem;
+      }
+
+    </style>
   </head>
   <body>
     <main class="container">
@@ -119,18 +127,18 @@
       </div>
 
       <div id="question">
-        <h3><%= AllQuestions[number].question %></h3>
+        <h3> <%= AllQuestions[number].question %> </h3>
+      </div>
+      
+      <div class="options">
+        <button class=""><p><%= AllQuestions[number].options[0] %></p></button> <br> <br> 
+        <button class=""><p><%= AllQuestions[number].options[1] %></p></button> <br> <br>
+        <button class=""><p><%= AllQuestions[number].options[2] %></p></button> <br> <br>
+        <button class=""><p><%= AllQuestions[number].options[3] %></p></button> <br> <br>
       </div>
 
       <div class="timer">
         <h3>00:30</h3>
-      </div>
-
-      <div id="answer-buttons">
-        <button class="option"><%= AllQuestions[number].options[0] %></button>
-        <button class="option"><%= AllQuestions[number].options[1] %></button>
-        <button class="option"><%= AllQuestions[number].options[2] %></button>
-        <button class="option"><%= AllQuestions[number].options[3] %></button>
       </div>
 
       <form action="/questions">
